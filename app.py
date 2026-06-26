@@ -18,7 +18,7 @@ load_dotenv()
 
 
 # --------------------------------------------------
-# Page Config
+# Page Configuration
 # --------------------------------------------------
 st.set_page_config(
     page_title="BrandPilot AI",
@@ -40,12 +40,12 @@ html, body, [class*="css"] {
 }
 
 .stApp {
-    background: linear-gradient(135deg, #F4F8FC 0%, #FFFFFF 48%, #EEF5FB 100%);
+    background: linear-gradient(135deg, #F5F9FC 0%, #FFFFFF 50%, #EEF5FB 100%);
     color: #111827 !important;
 }
 
 .block-container {
-    padding-top: 1.4rem;
+    padding-top: 1.5rem;
     padding-bottom: 2rem;
     max-width: 1250px;
 }
@@ -54,7 +54,7 @@ header[data-testid="stHeader"] {
     background: transparent;
 }
 
-/* Force readable text in main page */
+/* Force main text visibility */
 .main,
 .block-container,
 .stMarkdown,
@@ -78,14 +78,14 @@ header[data-testid="stHeader"] {
 }
 
 [data-testid="stSidebar"] * {
-    color: #FFFFFF !important;
+    color: white !important;
 }
 
 .sidebar-brand {
     padding: 24px 18px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.24);
     text-align: center;
     margin-bottom: 22px;
 }
@@ -120,7 +120,7 @@ header[data-testid="stHeader"] {
     padding: 13px 15px;
     border-radius: 16px;
     margin-bottom: 9px;
-    background: rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.14);
     font-size: 14px;
     font-weight: 700;
 }
@@ -129,7 +129,7 @@ header[data-testid="stHeader"] {
     margin-top: 18px;
     padding: 15px;
     border-radius: 18px;
-    background: rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.14);
     font-size: 13px;
     line-height: 1.6;
 }
@@ -171,7 +171,7 @@ header[data-testid="stHeader"] {
     line-height: 1.65;
 }
 
-/* Top cards */
+/* Feature cards */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -252,15 +252,6 @@ header[data-testid="stHeader"] {
     margin-bottom: 18px;
 }
 
-.form-card {
-    background: #FFFFFF;
-    border: 1px solid #D9E7F5;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 14px 36px rgba(15,23,42,0.06);
-    margin-top: 10px;
-}
-
 /* Labels */
 label {
     font-weight: 800 !important;
@@ -269,17 +260,16 @@ label {
 }
 
 /* Inputs */
-.stTextInput > div > div > input,
+.stTextInput input,
 .stTextArea textarea {
     background: #FFFFFF !important;
     color: #111827 !important;
     border: 1.5px solid #B7CBDD !important;
     border-radius: 14px !important;
     box-shadow: none !important;
-    caret-color: #111827 !important;
 }
 
-.stTextInput > div > div > input:focus,
+.stTextInput input:focus,
 .stTextArea textarea:focus {
     border: 2px solid #0A66C2 !important;
     box-shadow: 0 0 0 3px rgba(10,102,194,0.13) !important;
@@ -318,23 +308,53 @@ label {
     font-weight: 800 !important;
 }
 
-/* Selectbox */
-.stSelectbox div[data-baseweb="select"] {
-    background: #FFFFFF !important;
+/* Multiselect visibility */
+[data-baseweb="select"] {
+    background-color: #FFFFFF !important;
     border-radius: 14px !important;
-    border-color: #B7CBDD !important;
+    border: 1.5px solid #B7CBDD !important;
     color: #111827 !important;
 }
 
-.stSelectbox * {
+[data-baseweb="select"] * {
+    color: #111827 !important;
+}
+
+[data-baseweb="tag"] {
+    background-color: #EAF4FF !important;
+    border: 1px solid #BBD8F2 !important;
+    color: #0A66C2 !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+}
+
+[data-baseweb="tag"] span {
+    color: #0A66C2 !important;
+}
+
+[data-baseweb="popover"] {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+}
+
+ul[role="listbox"] {
+    background-color: #FFFFFF !important;
+}
+
+li[role="option"] {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+}
+
+li[role="option"]:hover {
+    background-color: #EAF4FF !important;
     color: #111827 !important;
 }
 
 /* Buttons */
 div.stButton > button {
-    width: auto;
     min-height: 52px;
-    padding: 0 26px;
+    padding: 0 28px;
     border-radius: 999px;
     border: none;
     background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
@@ -355,78 +375,23 @@ div.stDownloadButton > button {
     border-radius: 999px;
     border: 1px solid #0A66C2;
     color: #0A66C2 !important;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     font-weight: 800;
 }
 
-/* Loading card */
-.loading-card {
-    margin-top: 22px;
-    padding: 22px 24px;
-    border-radius: 22px;
-    background: #FFFFFF;
-    border: 1px solid #BBD8F2;
-    border-left: 7px solid #0A66C2;
-    box-shadow: 0 16px 36px rgba(15,23,42,0.08);
-}
-
-.loading-title {
-    color: #0A66C2 !important;
-    font-size: 19px;
-    font-weight: 900;
-    margin-bottom: 6px;
-}
-
-.loading-text {
-    color: #334155 !important;
-    font-size: 14.5px;
-    line-height: 1.6;
-}
-
-/* Result card */
-.result-box {
-    margin-top: 24px;
-    padding: 30px;
-    border-radius: 26px;
+/* Native result container visibility */
+[data-testid="stVerticalBlockBorderWrapper"] {
     background: #FFFFFF !important;
-    border: 1px solid #D8E6F3;
-    border-left: 8px solid #0A66C2;
-    box-shadow: 0 18px 42px rgba(15,23,42,0.10);
+    border: 1px solid #D8E6F3 !important;
+    border-radius: 24px !important;
+    box-shadow: 0 18px 42px rgba(15,23,42,0.08) !important;
 }
 
-.result-box,
-.result-box *,
-.result-box p,
-.result-box li,
-.result-box span,
-.result-box div,
-.result-box h1,
-.result-box h2,
-.result-box h3,
-.result-box h4,
-.result-box strong,
-.result-box em {
-    color: #111827 !important;
-    opacity: 1 !important;
-}
-
-.result-box h1,
-.result-box h2,
-.result-box h3 {
-    color: #0F172A !important;
-    font-weight: 900 !important;
-}
-
-.result-box h4 {
-    color: #0A66C2 !important;
-    font-weight: 850 !important;
-}
-
-.result-heading {
+.result-title {
     color: #0A66C2 !important;
     font-size: 24px;
     font-weight: 900;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 .footer {
@@ -507,29 +472,16 @@ def extract_pdf_text(uploaded_file) -> str:
         return ""
 
 
-def show_loading(message: str):
-    return st.empty().markdown(
-        f"""
-        <div class="loading-card">
-            <div class="loading-title">⏳ Generating with AI...</div>
-            <div class="loading-text">{message}</div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-
 def show_result(title: str, response: str, file_name: str):
-    st.markdown('<div class="result-box">', unsafe_allow_html=True)
-    st.markdown(f'<div class="result-heading">{title}</div>', unsafe_allow_html=True)
-    st.markdown(response)
-    st.download_button(
-        label="⬇️ Download Output",
-        data=response,
-        file_name=file_name,
-        mime="text/plain"
-    )
-    st.markdown('</div>', unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown(f"<div class='result-title'>{title}</div>", unsafe_allow_html=True)
+        st.markdown(response)
+        st.download_button(
+            label="⬇️ Download Output",
+            data=response,
+            file_name=file_name,
+            mime="text/plain"
+        )
 
 
 # --------------------------------------------------
@@ -551,18 +503,18 @@ output_parser = StrOutputParser()
 # LangChain Prompts
 # --------------------------------------------------
 profile_prompt = ChatPromptTemplate.from_template("""
-You are a senior LinkedIn personal branding strategist and profile optimization expert.
+You are a senior LinkedIn profile strategist, personal branding consultant, and professional positioning expert.
 
-Your task is to analyze and improve the user's LinkedIn profile based only on the content they provide.
+Your task is to analyze and improve the user's LinkedIn profile using only the content provided by the user.
 
 Important rules:
 - Do not claim that you opened, visited, scraped, or verified the LinkedIn URL.
 - The LinkedIn URL is only a reference field.
-- Use the uploaded PDF text, pasted About section, and experience details as the source.
+- Use uploaded PDF text, pasted About section, and experience details as the source.
 - Do not invent fake experience, fake metrics, fake brands, or fake achievements.
-- If information is missing, say what is missing and suggest what the user should add.
-- Keep the final output professional, practical, polished, and ready to copy into LinkedIn.
-- Use a premium, clear, executive-style tone.
+- If information is missing, clearly say what is missing.
+- Make the final output polished, practical, credible, and ready to copy into LinkedIn.
+- Focus on clarity, positioning, discoverability, keyword strength, and professional trust.
 
 User Information:
 
@@ -590,70 +542,133 @@ Experience / Projects / Achievements:
 Uploaded Profile / Resume / LinkedIn PDF Text:
 {uploaded_text}
 
-Generate the following in clear Markdown:
+Generate the output in this structure:
 
-## 1. Profile Strength Score out of 100
-## 2. Reason for the Score
-## 3. Missing Information Checklist
-## 4. 5 Improved LinkedIn Headline Options
-## 5. Optimized LinkedIn About Section
-## 6. Experience Section Rewrite Suggestions
-## 7. Top 15 LinkedIn Keywords
-## 8. Featured Section Suggestions
-## 9. Profile Banner Tagline Ideas
-## 10. 5 LinkedIn Post Ideas Based on This Profile
+## 1. Profile Strength Score
+
+Give a score out of 100.
+
+## 2. Executive Summary
+
+Give a short summary of the current profile quality.
+
+## 3. What Is Working Well
+
+List the strengths.
+
+## 4. What Is Missing
+
+List missing details, weak areas, and improvement opportunities.
+
+## 5. 5 Premium LinkedIn Headline Options
+
+Make them clear, professional, keyword-rich, and under 220 characters.
+
+## 6. Optimized About Section
+
+Write a polished LinkedIn About section using a professional but human tone.
+
+## 7. Experience Section Rewrite Suggestions
+
+Give improved bullet points and structure.
+
+## 8. Top LinkedIn Keywords
+
+Give 15 keywords that can improve profile discoverability.
+
+## 9. Featured Section Suggestions
+
+Suggest what the user should add to the Featured section.
+
+## 10. Banner Tagline Ideas
+
+Give 5 clean banner text ideas.
+
+## 11. Profile Improvement Action Plan
+
+Give a practical step-by-step improvement checklist.
+
+## 12. LinkedIn Content Ideas
+
+Give 8 post ideas based on the profile.
 """)
 
 
 post_prompt = ChatPromptTemplate.from_template("""
-You are a professional LinkedIn content writer.
+You are a senior LinkedIn content strategist and executive ghostwriter.
 
-Create a polished LinkedIn post based on the user's input.
+Your task is to create a high-quality LinkedIn post that feels human, clear, credible, and professional.
 
 Important rules:
-- Make the opening line strong.
-- Use simple, professional, human language.
-- Avoid fake claims.
-- Keep it readable with short paragraphs.
-- Add a clear CTA.
-- Add 3 to 5 relevant hashtags.
+- Do not make fake claims.
+- Do not exaggerate achievements.
+- Do not sound robotic or generic.
+- Keep the post suitable for LinkedIn.
+- Use short paragraphs and strong readability.
+- Start with a strong hook.
+- Include a clear story, insight, or point of view.
+- End with a useful call-to-action.
+- Make the post practical and industry-standard.
+- Avoid overusing emojis.
+- Avoid too many hashtags.
 
 User Input:
 
 Topic:
 {topic}
 
-Tone:
+Selected Tone Preferences:
 {tone}
 
 Target Audience:
 {audience}
 
-Post Goal:
+Selected Post Goals:
 {goal}
 
 Additional Context:
 {context}
 
-Generate in clear Markdown:
+Generate the output in this structure:
 
-## 1. LinkedIn Post
-## 2. Suggested Hook
-## 3. Suggested CTA
-## 4. Relevant Hashtags
+## 1. Final LinkedIn Post
+
+Write a polished, ready-to-copy LinkedIn post.
+
+## 2. Why This Post Works
+
+Explain briefly why the hook, flow, tone, and CTA are effective.
+
+## 3. Alternative Hook Options
+
+Give 5 strong hook options.
+
+## 4. Suggested CTA Options
+
+Give 3 CTA options.
+
+## 5. Hashtags
+
+Give 5 relevant hashtags.
+
+## 6. Content Quality Score
+
+Give a score out of 100 and explain the score.
 """)
 
 
 strategy_prompt = ChatPromptTemplate.from_template("""
-You are a LinkedIn personal branding strategist.
+You are a senior LinkedIn growth strategist and personal branding consultant.
 
-Create a practical LinkedIn content strategy for the user.
+Create a practical, professional LinkedIn content strategy for the user.
 
-Rules:
-- Keep it realistic.
+Important rules:
+- Keep it realistic and beginner-friendly.
 - Do not suggest fake achievements.
-- Make it beginner-friendly but professional.
-- Focus on consistency and clear positioning.
+- Do not give generic advice.
+- Make the strategy clear, structured, and executable.
+- Focus on positioning, trust-building, consistency, and audience relevance.
+- Make the output suitable for a professional LinkedIn creator.
 
 User Details:
 
@@ -672,17 +687,50 @@ Target Audience:
 Main LinkedIn Goal:
 {goal}
 
-Posting Frequency:
+Posting Frequency and Style:
 {frequency}
 
-Generate in clear Markdown:
+Generate the output in this structure:
 
-## 1. Personal Brand Positioning Statement
-## 2. 4 Content Pillars
-## 3. Weekly LinkedIn Content Plan
-## 4. 12 LinkedIn Post Ideas
-## 5. Best Post Formats for This User
-## 6. 5 Practical Growth Tips
+## 1. Personal Brand Positioning
+
+Write a clear positioning statement.
+
+## 2. Target Audience Understanding
+
+Explain what this audience cares about.
+
+## 3. 5 Content Pillars
+
+Give 5 content pillars with explanation.
+
+## 4. Weekly Content Plan
+
+Create a weekly plan based on the selected posting frequency.
+
+## 5. 15 LinkedIn Post Ideas
+
+Give practical, realistic post ideas.
+
+## 6. Recommended Post Formats
+
+Suggest formats like story post, lesson post, checklist, framework, project update, opinion post, etc.
+
+## 7. 30-Day Growth Plan
+
+Give a practical 30-day action plan.
+
+## 8. Engagement Strategy
+
+Explain how the user should comment, connect, and engage professionally.
+
+## 9. Content Quality Rules
+
+Give rules the user should follow before posting.
+
+## 10. Success Metrics
+
+Suggest what the user should track.
 """)
 
 
@@ -737,7 +785,7 @@ st.markdown("""
 
 
 # --------------------------------------------------
-# Metric Cards
+# Feature Cards
 # --------------------------------------------------
 st.markdown("""
 <div class="metrics-grid">
@@ -766,7 +814,7 @@ st.markdown("""
 
 
 # --------------------------------------------------
-# App Tabs
+# Tabs
 # --------------------------------------------------
 tab1, tab2, tab3 = st.tabs([
     "👤 Profile Intelligence",
@@ -776,7 +824,7 @@ tab1, tab2, tab3 = st.tabs([
 
 
 # --------------------------------------------------
-# Tab 1 - Profile Optimizer
+# Tab 1 - Profile Intelligence
 # --------------------------------------------------
 with tab1:
     st.markdown('<div class="module-title">👤 Profile Intelligence</div>', unsafe_allow_html=True)
@@ -853,29 +901,24 @@ with tab1:
         elif not name or not role or not skills or not target_audience:
             st.warning("Please fill Name, Role, Skills, and Target Audience.")
         else:
-            loading = st.empty()
-            loading.markdown("""
-            <div class="loading-card">
-                <div class="loading-title">⏳ Building your profile optimization report...</div>
-                <div class="loading-text">
-                    AI is reviewing your profile inputs, identifying gaps, and generating better headlines, About section, keywords, and content ideas.
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            with st.status("Building your profile optimization report...", expanded=True) as status:
+                st.write("Reviewing profile inputs...")
+                st.write("Identifying profile gaps...")
+                st.write("Generating improved headline, About section, keywords, and content ideas...")
 
-            response = profile_chain.invoke({
-                "profile_url": profile_url if profile_url else "Not provided",
-                "name": name,
-                "role": role,
-                "skills": skills,
-                "target_audience": target_audience,
-                "about_section": about_section if about_section else "Not provided",
-                "experience": experience if experience else "Not provided",
-                "uploaded_text": uploaded_text if uploaded_text else "Not provided"
-            })
+                response = profile_chain.invoke({
+                    "profile_url": profile_url if profile_url else "Not provided",
+                    "name": name,
+                    "role": role,
+                    "skills": skills,
+                    "target_audience": target_audience,
+                    "about_section": about_section if about_section else "Not provided",
+                    "experience": experience if experience else "Not provided",
+                    "uploaded_text": uploaded_text if uploaded_text else "Not provided"
+                })
 
-            loading.empty()
-            st.session_state.profile_result = response
+                st.session_state.profile_result = response
+                status.update(label="Profile optimization completed.", state="complete", expanded=False)
 
     if st.session_state.profile_result:
         show_result(
@@ -886,7 +929,7 @@ with tab1:
 
 
 # --------------------------------------------------
-# Tab 2 - Post Generator
+# Tab 2 - Post Studio
 # --------------------------------------------------
 with tab2:
     st.markdown('<div class="module-title">✍️ Post Studio</div>', unsafe_allow_html=True)
@@ -900,58 +943,74 @@ with tab2:
     with col1:
         topic = st.text_area(
             "Post Topic",
-            placeholder="Example: I built my first LangChain application",
+            placeholder="Example: Future of AI in HR",
             height=150
         )
 
         context = st.text_area(
             "Additional Context - optional",
-            placeholder="Example: I am learning LangChain step by step and built a Streamlit app.",
+            placeholder="Example: I want to share how AI will change skills, productivity, and decision-making.",
             height=110
         )
 
     with col2:
         audience = st.text_input(
             "Target Audience",
-            placeholder="Example: AI learners and beginners"
+            placeholder="Example: HR professionals and HR students"
         )
 
-        tone = st.selectbox(
-            "Tone",
-            ["Professional", "Inspiring", "Storytelling", "Educational", "Bold", "Simple"]
+        tone_options = st.multiselect(
+            "Tone Preferences",
+            [
+                "Professional",
+                "Inspiring",
+                "Storytelling",
+                "Educational",
+                "Bold",
+                "Simple",
+                "Thought Leadership",
+                "Personal Journey",
+                "Industry Insight"
+            ],
+            default=["Professional", "Educational"]
         )
 
-        goal = st.selectbox(
-            "Post Goal",
-            ["Educate", "Inspire", "Share Learning", "Promote Project", "Build Personal Brand"]
+        goal_options = st.multiselect(
+            "Post Goals",
+            [
+                "Educate",
+                "Inspire",
+                "Share Learning",
+                "Promote Project",
+                "Build Personal Brand",
+                "Start Conversation",
+                "Share Opinion",
+                "Create Awareness"
+            ],
+            default=["Educate", "Build Personal Brand"]
         )
 
     generate_post = st.button("✨ Generate Professional Post")
 
     if generate_post:
-        if not topic or not audience:
-            st.warning("Please enter Post Topic and Target Audience.")
+        if not topic or not audience or not tone_options or not goal_options:
+            st.warning("Please enter Post Topic, Target Audience, Tone Preferences, and Post Goals.")
         else:
-            loading = st.empty()
-            loading.markdown("""
-            <div class="loading-card">
-                <div class="loading-title">⏳ Writing your LinkedIn post...</div>
-                <div class="loading-text">
-                    AI is creating a clear post with a strong hook, CTA, and hashtags.
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            with st.status("Creating your LinkedIn post...", expanded=True) as status:
+                st.write("Understanding topic and audience...")
+                st.write("Applying selected tone and goals...")
+                st.write("Writing hook, body, CTA, and hashtags...")
 
-            response = post_chain.invoke({
-                "topic": topic,
-                "tone": tone,
-                "audience": audience,
-                "goal": goal,
-                "context": context if context else "Not provided"
-            })
+                response = post_chain.invoke({
+                    "topic": topic,
+                    "tone": ", ".join(tone_options),
+                    "audience": audience,
+                    "goal": ", ".join(goal_options),
+                    "context": context if context else "Not provided"
+                })
 
-            loading.empty()
-            st.session_state.post_result = response
+                st.session_state.post_result = response
+                status.update(label="LinkedIn post generated.", state="complete", expanded=False)
 
     if st.session_state.post_result:
         show_result(
@@ -999,38 +1058,45 @@ with tab3:
             placeholder="Example: Build my personal brand and share my Gen AI learning journey",
             height=100
         )
-        frequency = st.selectbox(
-            "Posting Frequency",
-            ["2 posts per week", "3 posts per week", "4 posts per week", "5 posts per week"]
+
+        frequency_options = st.multiselect(
+            "Posting Frequency / Style",
+            [
+                "2 posts per week",
+                "3 posts per week",
+                "4 posts per week",
+                "5 posts per week",
+                "Short posts",
+                "Story-based posts",
+                "Educational posts",
+                "Project update posts",
+                "Thought leadership posts"
+            ],
+            default=["3 posts per week", "Educational posts", "Project update posts"]
         )
 
     generate_strategy = st.button("📌 Build My Content Strategy")
 
     if generate_strategy:
-        if not strategy_name or not strategy_role or not strategy_skills or not strategy_audience or not strategy_goal:
+        if not strategy_name or not strategy_role or not strategy_skills or not strategy_audience or not strategy_goal or not frequency_options:
             st.warning("Please fill all fields before generating.")
         else:
-            loading = st.empty()
-            loading.markdown("""
-            <div class="loading-card">
-                <div class="loading-title">⏳ Building your content strategy...</div>
-                <div class="loading-text">
-                    AI is creating your positioning, content pillars, weekly plan, and post ideas.
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            with st.status("Building your content strategy...", expanded=True) as status:
+                st.write("Understanding your audience and goal...")
+                st.write("Creating content pillars...")
+                st.write("Building weekly plan and 30-day growth plan...")
 
-            response = strategy_chain.invoke({
-                "name": strategy_name,
-                "role": strategy_role,
-                "skills": strategy_skills,
-                "audience": strategy_audience,
-                "goal": strategy_goal,
-                "frequency": frequency
-            })
+                response = strategy_chain.invoke({
+                    "name": strategy_name,
+                    "role": strategy_role,
+                    "skills": strategy_skills,
+                    "audience": strategy_audience,
+                    "goal": strategy_goal,
+                    "frequency": ", ".join(frequency_options)
+                })
 
-            loading.empty()
-            st.session_state.strategy_result = response
+                st.session_state.strategy_result = response
+                status.update(label="Content strategy generated.", state="complete", expanded=False)
 
     if st.session_state.strategy_result:
         show_result(
